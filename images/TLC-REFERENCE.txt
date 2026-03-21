@@ -1,0 +1,8 @@
+Taxis verdes (Boro Taxis) — referencia NYC TLC
+==============================================
+
+Información oficial sobre taxis en NYC:
+  https://www.nyc.gov/site/tlc/index.page
+
+La ilustración taxi-boro-green.svg es dibujo propio del sitio.
+No copiar logotipos ni fotos oficiales de la TLC sin permiso.

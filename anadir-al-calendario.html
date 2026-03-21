@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Añadir cita al calendario - Los Taxistas Barber Shop. Abre Google Calendar con la cita rellenada y añade recordatorios." />
+  <meta name="robots" content="noindex, follow" />
+  <title>Añadir cita al calendario | Los Taxistas Barber Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Ir al contenido</a>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="Los Taxistas Barber Shop" class="logo-img" width="140" height="44" />
+        <span class="logo-text">Los Taxistas</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#reserva">Reservar</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+      <a href="index.html#reserva" class="btn btn-cta header-cta">Reservar cita</a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="legal-page section calendar-page">
+    <div class="container">
+      <h1>Añadir cita al calendario</h1>
+      <p class="section-intro" style="margin-bottom: 1rem;">Rellena los datos de la cita. Al hacer clic en <strong>«Abrir en Google Calendar»</strong>, se abrirá el formulario de Google Calendar con el evento ya rellenado. Ahí puedes guardar la cita y <strong>añadir recordatorios</strong> (10 min antes, 1 hora antes, etc.) antes de guardar.</p>
+      <p class="section-intro" style="margin-bottom: 1.5rem;">Si usas Apple Calendar o Outlook, abre el enlace en el navegador: podrás copiar los datos del evento y crearlo en tu app, o vincular Google Calendar con tu calendario principal.</p>
+
+      <form id="calendar-form" class="calendar-form" aria-label="Datos de la cita">
+        <label for="cal-cliente">Cliente</label>
+        <input type="text" id="cal-cliente" name="cliente" placeholder="Nombre del cliente" required />
+
+        <label for="cal-servicio">Servicio</label>
+        <input type="text" id="cal-servicio" name="servicio" placeholder="Ej: Corte, fade, barba, color…" />
+
+        <div class="form-row">
+          <div>
+            <label for="cal-fecha">Fecha</label>
+            <input type="date" id="cal-fecha" name="fecha" required />
+          </div>
+          <div>
+            <label for="cal-hora">Hora</label>
+            <input type="time" id="cal-hora" name="hora" required />
+          </div>
+        </div>
+
+        <label for="cal-duracion">Duración (minutos)</label>
+        <select id="cal-duracion" name="duracion">
+          <option value="30">30 min</option>
+          <option value="45" selected>45 min</option>
+          <option value="60">1 hora</option>
+          <option value="90">1 h 30 min</option>
+          <option value="120">2 horas</option>
+        </select>
+
+        <button type="submit" class="btn btn-cta" style="width: 100%; margin-top: 0.5rem;">Abrir en Google Calendar</button>
+      </form>
+
+      <div class="calendar-note">
+        <strong>Recordatorios:</strong> Al abrir el evento en Google Calendar, antes de guardar puedes añadir recordatorios (por ejemplo 10 minutos antes, 1 hora antes). En móvil o en el navegador se abre el formulario de nuevo evento con los datos ya rellenados.
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-brand">Los Taxistas Barber Shop</p>
+      <p class="footer-address">501 W 207th St, New York, NY 10034</p>
+      <p class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#reserva">Reservar</a>
+        <a href="anadir-al-calendario.html">Añadir al calendario</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('calendar-form');
+      var locationStr = '501 W 207th St, New York, NY 10034';
+
+      function pad(n) { return n < 10 ? '0' + n : n; }
+
+      function toGoogleCalendarUTC(date, durationMins) {
+        var start = new Date(date);
+        var end = new Date(start.getTime() + durationMins * 60000);
+        var startStr = start.getFullYear() + pad(start.getUTCMonth() + 1) + pad(start.getUTCDate()) + 'T' + pad(start.getUTCHours()) + pad(start.getUTCMinutes()) + pad(start.getUTCSeconds()) + 'Z';
+        var endStr = end.getFullYear() + pad(end.getUTCMonth() + 1) + pad(end.getUTCDate()) + 'T' + pad(end.getUTCHours()) + pad(end.getUTCMinutes()) + pad(end.getUTCSeconds()) + 'Z';
+        return startStr + '/' + endStr;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var cliente = document.getElementById('cal-cliente').value.trim() || 'Cliente';
+        var servicio = document.getElementById('cal-servicio').value.trim() || 'Cita Los Taxistas';
+        var fecha = document.getElementById('cal-fecha').value;
+        var hora = document.getElementById('cal-hora').value;
+        var duracion = parseInt(document.getElementById('cal-duracion').value, 10);
+
+        if (!fecha || !hora) {
+          alert('Indica fecha y hora.');
+          return;
+        }
+
+        var parts = fecha.split('-');
+        var timeParts = hora.split(':');
+        var startDate = new Date(
+          parseInt(parts[0], 10),
+          parseInt(parts[1], 10) - 1,
+          parseInt(parts[2], 10),
+          parseInt(timeParts[0], 10),
+          parseInt(timeParts[1], 10) || 0,
+          0,
+          0
+        );
+
+        var title = 'Cita: ' + cliente + ' – ' + servicio;
+        var details = 'Cliente: ' + cliente + '\nServicio: ' + servicio + '\n\nLos Taxistas Barber Shop. Añade recordatorios (10 min, 1 h antes) al guardar en Google Calendar.';
+        var dates = toGoogleCalendarUTC(startDate, duracion);
+
+        var url = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+          '&text=' + encodeURIComponent(title) +
+          '&dates=' + dates +
+          '&details=' + encodeURIComponent(details) +
+          '&location=' + encodeURIComponent(locationStr);
+
+        window.open(url, '_blank', 'noopener,noreferrer');
+      });
+    })();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

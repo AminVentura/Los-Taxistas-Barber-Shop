@@ -1,0 +1,27 @@
+============================================
+  CÓMO GENERAR favicon.ico (navegadores antiguos)
+============================================
+
+Tu sitio ya usa images/favicon.svg, que funciona en casi todos
+los navegadores actuales. Para soportar navegadores muy antiguos
+o algunas apps que piden .ico, puedes generar un .ico desde el SVG.
+
+OPCIÓN 1 – Favicon.io (recomendado)
+  1. Entra en https://favicon.io/favicon-converter/
+  2. Sube el archivo: images/favicon.svg
+  3. Descarga el .zip, extrae favicon.ico
+  4. Guarda favicon.ico en la carpeta images/
+
+OPCIÓN 2 – RealFaviconGenerator
+  1. Entra en https://realfavicongenerator.net/
+  2. Sube images/favicon.svg
+  3. Genera y descarga el paquete
+  4. Copia favicon.ico a images/
+
+LUEGO, en index.html (dentro de <head>), añade esta línea
+después del <link rel="icon" href="images/favicon.svg" ...>:
+
+  <link rel="icon" href="images/favicon.ico" sizes="32x32" />
+
+Así los navegadores que prefieran .ico lo usarán; el resto seguirá
+usando el SVG.

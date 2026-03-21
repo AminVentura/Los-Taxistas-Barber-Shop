@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <!-- Boro Taxi body (NYC green cab style) -->
+  <g transform="translate(40, 55)">
+    <!-- Cab body - Apple Green -->
+    <path d="M20 80 L20 40 Q20 20 50 20 L180 20 Q210 20 210 40 L210 80 L240 80 L240 100 L20 100 Z" fill="#4da832" stroke="#3a8c25" stroke-width="2"/>
+    <!-- Roof / taxi sign -->
+    <rect x="50" y="0" width="120" height="26" rx="4" fill="#1a1a1a" stroke="#4da832" stroke-width="1.5"/>
+    <text x="110" y="10" text-anchor="middle" fill="#4da832" font-family="Outfit, sans-serif" font-size="7" font-weight="700">BORO</text>
+    <text x="110" y="20" text-anchor="middle" fill="#ffffff" font-family="Outfit, sans-serif" font-size="9" font-weight="800">TAXI</text>
+    <!-- Windows -->
+    <rect x="35" y="32" width="45" height="38" rx="5" fill="#c8e8b8" stroke="#3a8c25" stroke-width="1.2" opacity="0.85"/>
+    <rect x="90" y="32" width="50" height="38" rx="5" fill="#c8e8b8" stroke="#3a8c25" stroke-width="1.2" opacity="0.85"/>
+    <rect x="150" y="32" width="45" height="38" rx="5" fill="#c8e8b8" stroke="#3a8c25" stroke-width="1.2" opacity="0.85"/>
+    <!-- Stripe / checkered band -->
+    <rect x="20" y="72" width="220" height="10" fill="#1a1a1a" opacity="0.4"/>
+    <!-- Wheels -->
+    <circle cx="60" cy="98" r="15" fill="#1a1a1a" stroke="#4da832" stroke-width="2"/>
+    <circle cx="60" cy="98" r="7" fill="#0d0d0d" stroke="#4da832" stroke-width="1.2"/>
+    <circle cx="185" cy="98" r="15" fill="#1a1a1a" stroke="#4da832" stroke-width="2"/>
+    <circle cx="185" cy="98" r="7" fill="#0d0d0d" stroke="#4da832" stroke-width="1.2"/>
+    <!-- Headlight -->
+    <ellipse cx="218" cy="56" rx="9" ry="7" fill="#ffffaa" opacity="0.95"/>
+    <!-- Front bumper -->
+    <rect x="210" y="78" width="32" height="10" rx="2" fill="#2a7a1a"/>
+    <!-- Door line -->
+    <path d="M130 25 L130 78" stroke="#3a8c25" stroke-width="1" opacity="0.5"/>
+  </g>
+  <!-- Barber clippers - left side -->
+  <g transform="translate(95, 115)">
+    <path d="M0 22 L8 0 L26 5 L29 26 L8 30 Z" fill="#1e1e1e" stroke="#4da832" stroke-width="1.8"/>
+    <path d="M5 13 L23 16" stroke="#4da832" stroke-width="2" stroke-linecap="round"/>
+    <rect x="27" y="8" width="13" height="19" rx="2" fill="#141414" stroke="#4da832" stroke-width="1.2"/>
+    <circle cx="33" cy="18" r="3" fill="#4da832"/>
+  </g>
+  <!-- Scissors - right side -->
+  <g transform="translate(200, 108)">
+    <path d="M0 0 L16 26 L13 29 L0 9 Z" fill="#1e1e1e" stroke="#4da832" stroke-width="1.5"/>
+    <path d="M16 26 L31 0 L34 5 L16 29 Z" fill="#1e1e1e" stroke="#4da832" stroke-width="1.5"/>
+    <circle cx="23" cy="19" r="4" fill="#0d0d0d" stroke="#4da832" stroke-width="1.2"/>
+  </g>
+  <!-- Decorative line under -->
+  <path d="M30 188 L290 188" stroke="#4da832" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+</svg>
