@@ -103,6 +103,52 @@
   handleBookForm('book-form-es');
   handleBookForm('book-form-en');
 
+  // Individual barber cards: show/hide form + WhatsApp booking
+  document.querySelectorAll('.toggle-barber-form').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var card = btn.closest('.barber-card');
+      if (!card) return;
+      var wrap = card.querySelector('.barber-form-wrap');
+      if (!wrap) return;
+      var isHidden = wrap.hasAttribute('hidden');
+      if (isHidden) wrap.removeAttribute('hidden');
+      else wrap.setAttribute('hidden', '');
+      card.querySelectorAll('.toggle-barber-form').forEach(function (control) {
+        if (control.classList.contains('btn')) {
+          control.textContent = isHidden ? 'Ocultar formulario' : 'Reservar Cita';
+          control.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+        }
+      });
+    });
+  });
+
+  var SHOP_WA = '12129420519';
+
+  document.querySelectorAll('.barber-book-form').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var staff = form.getAttribute('data-staff') || 'Barbero';
+      var phone = form.getAttribute('data-phone') || SHOP_WA;
+      var route = form.getAttribute('data-wa-route');
+      var toShop = route === 'shop' || (route !== 'direct' && phone === SHOP_WA);
+      var service = (form.querySelector('[name="service"]') || {}).value || '';
+      var date = (form.querySelector('[name="date"]') || {}).value || '';
+      var time = (form.querySelector('[name="time"]') || {}).value || '';
+      var name = (form.querySelector('[name="name"]') || {}).value || '';
+      var description = (form.querySelector('[name="description"]') || {}).value || '';
+      var body =
+        'Tipo de servicio: ' + service + '\n' +
+        'Fecha: ' + date + '\n' +
+        'Hora preferida: ' + time + '\n' +
+        'Nombre del cliente: ' + name + '\n' +
+        'Descripcion: ' + description;
+      var msg = toShop
+        ? 'Hola Los Taxistas Barber Shop — quiero reservar cita con ' + staff + '.\n\n' + body
+        : 'Hola ' + staff + ', quiero reservar cita.\n\n' + body;
+      window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    });
+  });
+
   // Booksy: un solo enlace para actualizar (cambia data-booksy-url o el href del primer enlace)
   var booksyCard = document.getElementById('booking-booksy-link');
   var booksyBtn = document.getElementById('btn-booksy');

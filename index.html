@@ -199,7 +199,7 @@
           <article class="audience-card">
             <div class="audience-icon">👩</div>
             <h3>Mujeres</h3>
-            <p>Cortes, color, mechas, blowouts, peinados. Estilismo y cuidado del cabello en un salón donde te sientes cómoda y bien atendida.</p>
+            <p>Cortes, color, mechas, blowouts, peinados, cejas, manicure y pedicure. Estilismo y cuidado completo en un salón donde te sientes cómoda y bien atendida.</p>
           </article>
           <article class="audience-card">
             <div class="audience-icon">👦</div>
@@ -217,14 +217,296 @@
     <section id="equipo" class="section section-team">
       <div class="container">
         <h2 class="section-title">Nuestro equipo</h2>
-        <p class="section-intro">Los Taxistas Barber Shop es una barbería con ambiente acogedor y barberos expertos. Ofrecemos desde cortes clásicos hasta estilos modernos, celebrando la diversidad de la ciudad con un trato personalizado para cada cliente. Una opción popular entre vecinos y visitantes.</p>
-        <div class="team-photo-wrap" id="team-photo-wrap">
-          <img src="images/team.jpg" alt="Equipo de Los Taxistas Barber Shop" class="team-photo" loading="lazy" onerror="this.closest('.team-photo-wrap').style.display='none'" />
-        </div>
-        <div class="section-cta">
-          <a href="https://wa.me/12129420519?text=Hola%2C%20quiero%20reservar%20una%20cita%20en%20Los%20Taxistas%20en%20Los%20Taxistas%20Barber%20Shop" class="btn btn-cta" target="_blank" rel="noopener">
-            <img src="images/icon-whatsapp.svg" alt="" width="20" height="20" class="btn-icon" /> Reservar por WhatsApp
-          </a>
+        <p class="section-intro">Conoce al equipo y reserva con tu profesional preferido. <strong>Luis Stylo</strong> recibe el mensaje en su WhatsApp directo. En las demás tarjetas el formulario ya está activo: por ahora el envío va al <strong>WhatsApp del salón</strong> para que confirmen la cita con el barbero o especialista que elijas; cuando tengan número propio, solo hay que cambiarlo en el código.</p>
+        <div class="barber-grid">
+          <article class="barber-card barber-card--featured">
+            <img src="images/Luis Stylo.jpeg" alt="Luis Stylo en Los Taxistas Barber Shop" class="barber-photo" loading="lazy" onerror="this.style.display='none'" />
+            <h3>Luis Stylo</h3>
+            <p class="barber-role">Barbero · Magic Barber</p>
+            <p class="barber-phone"><a href="tel:+13476305356">+1 (347) 630-5356</a></p>
+            <span class="barber-status">Online</span>
+            <button type="button" class="btn btn-outline btn-sm toggle-barber-form" aria-expanded="false">Reservar Cita</button>
+            <div class="barber-form-wrap" hidden>
+              <p class="barber-form-subtitle">Agenda tu cita por internet · Confirma por WhatsApp</p>
+              <button type="button" class="barber-form-hide toggle-barber-form">Ocultar formulario</button>
+              <form class="book-form barber-book-form" data-staff="Luis Stylo" data-phone="13476305356" data-wa-route="direct" aria-label="Reserva con Luis Stylo">
+                <label>Tipo de servicio *</label>
+                <select name="service" required>
+                  <option value="">Seleccione el servicio</option>
+                  <option value="Corte">Corte</option>
+                  <option value="Fade / Line up">Fade / Line up</option>
+                  <option value="Barba">Barba</option>
+                  <option value="Corte + barba">Corte + barba</option>
+                  <option value="Color / Tinte">Color / Tinte</option>
+                  <option value="Otro">Otro</option>
+                </select>
+                <label>Fecha *</label>
+                <input type="date" name="date" required />
+                <label>Hora preferida *</label>
+                <input type="time" name="time" required />
+                <label>Nombre del cliente *</label>
+                <input type="text" name="name" placeholder="Ej: María López" required />
+                <label>Descripción *</label>
+                <textarea name="description" rows="2" placeholder="Ej: Lavado y secado con volumen" required></textarea>
+                <button type="submit" class="btn btn-cta btn-block">Enviar reserva por WhatsApp</button>
+              </form>
+            </div>
+          </article>
+          <article class="barber-card">
+            <h3>Barbero 2</h3>
+            <p class="barber-role">Barbero</p>
+            <p class="barber-phone barber-phone--shop">Reserva vía <a href="https://wa.me/12129420519" target="_blank" rel="noopener">WhatsApp del salón</a> hasta tener número directo.</p>
+            <span class="barber-status">Online</span>
+            <button type="button" class="btn btn-outline btn-sm toggle-barber-form" aria-expanded="false">Reservar Cita</button>
+            <div class="barber-form-wrap" hidden>
+              <p class="barber-form-subtitle">Agenda tu cita por internet · Confirma por WhatsApp</p>
+              <button type="button" class="barber-form-hide toggle-barber-form">Ocultar formulario</button>
+              <form class="book-form barber-book-form" data-staff="Barbero 2" data-phone="12129420519" data-wa-route="shop" aria-label="Reserva con Barbero 2">
+                <label>Tipo de servicio *</label>
+                <select name="service" required>
+                  <option value="">Seleccione el servicio</option>
+                  <option value="Corte">Corte</option>
+                  <option value="Fade / Line up">Fade / Line up</option>
+                  <option value="Barba">Barba</option>
+                  <option value="Corte + barba">Corte + barba</option>
+                  <option value="Color / Tinte">Color / Tinte</option>
+                  <option value="Otro">Otro</option>
+                </select>
+                <label>Fecha *</label>
+                <input type="date" name="date" required />
+                <label>Hora preferida *</label>
+                <input type="time" name="time" required />
+                <label>Nombre del cliente *</label>
+                <input type="text" name="name" placeholder="Ej: María López" required />
+                <label>Descripción *</label>
+                <textarea name="description" rows="2" placeholder="Ej: Lavado y secado con volumen" required></textarea>
+                <button type="submit" class="btn btn-cta btn-block">Enviar reserva por WhatsApp</button>
+              </form>
+            </div>
+          </article>
+          <article class="barber-card">
+            <h3>Barbero 3</h3>
+            <p class="barber-role">Barbero</p>
+            <p class="barber-phone barber-phone--shop">Reserva vía <a href="https://wa.me/12129420519" target="_blank" rel="noopener">WhatsApp del salón</a> hasta tener número directo.</p>
+            <span class="barber-status">Online</span>
+            <button type="button" class="btn btn-outline btn-sm toggle-barber-form" aria-expanded="false">Reservar Cita</button>
+            <div class="barber-form-wrap" hidden>
+              <p class="barber-form-subtitle">Agenda tu cita por internet · Confirma por WhatsApp</p>
+              <button type="button" class="barber-form-hide toggle-barber-form">Ocultar formulario</button>
+              <form class="book-form barber-book-form" data-staff="Barbero 3" data-phone="12129420519" data-wa-route="shop" aria-label="Reserva con Barbero 3">
+                <label>Tipo de servicio *</label>
+                <select name="service" required>
+                  <option value="">Seleccione el servicio</option>
+                  <option value="Corte">Corte</option>
+                  <option value="Fade / Line up">Fade / Line up</option>
+                  <option value="Barba">Barba</option>
+                  <option value="Corte + barba">Corte + barba</option>
+                  <option value="Color / Tinte">Color / Tinte</option>
+                  <option value="Otro">Otro</option>
+                </select>
+                <label>Fecha *</label>
+                <input type="date" name="date" required />
+                <label>Hora preferida *</label>
+                <input type="time" name="time" required />
+                <label>Nombre del cliente *</label>
+                <input type="text" name="name" placeholder="Ej: María López" required />
+                <label>Descripción *</label>
+                <textarea name="description" rows="2" placeholder="Ej: Lavado y secado con volumen" required></textarea>
+                <button type="submit" class="btn btn-cta btn-block">Enviar reserva por WhatsApp</button>
+              </form>
+            </div>
+          </article>
+          <article class="barber-card">
+            <h3>Barbero 4</h3>
+            <p class="barber-role">Barbero</p>
+            <p class="barber-phone barber-phone--shop">Reserva vía <a href="https://wa.me/12129420519" target="_blank" rel="noopener">WhatsApp del salón</a> hasta tener número directo.</p>
+            <span class="barber-status">Online</span>
+            <button type="button" class="btn btn-outline btn-sm toggle-barber-form" aria-expanded="false">Reservar Cita</button>
+            <div class="barber-form-wrap" hidden>
+              <p class="barber-form-subtitle">Agenda tu cita por internet · Confirma por WhatsApp</p>
+              <button type="button" class="barber-form-hide toggle-barber-form">Ocultar formulario</button>
+              <form class="book-form barber-book-form" data-staff="Barbero 4" data-phone="12129420519" data-wa-route="shop" aria-label="Reserva con Barbero 4">
+                <label>Tipo de servicio *</label>
+                <select name="service" required>
+                  <option value="">Seleccione el servicio</option>
+                  <option value="Corte">Corte</option>
+                  <option value="Fade / Line up">Fade / Line up</option>
+                  <option value="Barba">Barba</option>
+                  <option value="Corte + barba">Corte + barba</option>
+                  <option value="Color / Tinte">Color / Tinte</option>
+                  <option value="Otro">Otro</option>
+                </select>
+                <label>Fecha *</label>
+                <input type="date" name="date" required />
+                <label>Hora preferida *</label>
+                <input type="time" name="time" required />
+                <label>Nombre del cliente *</label>
+                <input type="text" name="name" placeholder="Ej: María López" required />
+                <label>Descripción *</label>
+                <textarea name="description" rows="2" placeholder="Ej: Lavado y secado con volumen" required></textarea>
+                <button type="submit" class="btn btn-cta btn-block">Enviar reserva por WhatsApp</button>
+              </form>
+            </div>
+          </article>
+          <article class="barber-card">
+            <h3>Barbero 5</h3>
+            <p class="barber-role">Barbero</p>
+            <p class="barber-phone barber-phone--shop">Reserva vía <a href="https://wa.me/12129420519" target="_blank" rel="noopener">WhatsApp del salón</a> hasta tener número directo.</p>
+            <span class="barber-status">Online</span>
+            <button type="button" class="btn btn-outline btn-sm toggle-barber-form" aria-expanded="false">Reservar Cita</button>
+            <div class="barber-form-wrap" hidden>
+              <p class="barber-form-subtitle">Agenda tu cita por internet · Confirma por WhatsApp</p>
+              <button type="button" class="barber-form-hide toggle-barber-form">Ocultar formulario</button>
+              <form class="book-form barber-book-form" data-staff="Barbero 5" data-phone="12129420519" data-wa-route="shop" aria-label="Reserva con Barbero 5">
+                <label>Tipo de servicio *</label>
+                <select name="service" required>
+                  <option value="">Seleccione el servicio</option>
+                  <option value="Corte">Corte</option>
+                  <option value="Fade / Line up">Fade / Line up</option>
+                  <option value="Barba">Barba</option>
+                  <option value="Corte + barba">Corte + barba</option>
+                  <option value="Color / Tinte">Color / Tinte</option>
+                  <option value="Otro">Otro</option>
+                </select>
+                <label>Fecha *</label>
+                <input type="date" name="date" required />
+                <label>Hora preferida *</label>
+                <input type="time" name="time" required />
+                <label>Nombre del cliente *</label>
+                <input type="text" name="name" placeholder="Ej: María López" required />
+                <label>Descripción *</label>
+                <textarea name="description" rows="2" placeholder="Ej: Lavado y secado con volumen" required></textarea>
+                <button type="submit" class="btn btn-cta btn-block">Enviar reserva por WhatsApp</button>
+              </form>
+            </div>
+          </article>
+          <article class="barber-card">
+            <h3>Barbero 6</h3>
+            <p class="barber-role">Barbero</p>
+            <p class="barber-phone barber-phone--shop">Reserva vía <a href="https://wa.me/12129420519" target="_blank" rel="noopener">WhatsApp del salón</a> hasta tener número directo.</p>
+            <span class="barber-status">Online</span>
+            <button type="button" class="btn btn-outline btn-sm toggle-barber-form" aria-expanded="false">Reservar Cita</button>
+            <div class="barber-form-wrap" hidden>
+              <p class="barber-form-subtitle">Agenda tu cita por internet · Confirma por WhatsApp</p>
+              <button type="button" class="barber-form-hide toggle-barber-form">Ocultar formulario</button>
+              <form class="book-form barber-book-form" data-staff="Barbero 6" data-phone="12129420519" data-wa-route="shop" aria-label="Reserva con Barbero 6">
+                <label>Tipo de servicio *</label>
+                <select name="service" required>
+                  <option value="">Seleccione el servicio</option>
+                  <option value="Corte">Corte</option>
+                  <option value="Fade / Line up">Fade / Line up</option>
+                  <option value="Barba">Barba</option>
+                  <option value="Corte + barba">Corte + barba</option>
+                  <option value="Color / Tinte">Color / Tinte</option>
+                  <option value="Otro">Otro</option>
+                </select>
+                <label>Fecha *</label>
+                <input type="date" name="date" required />
+                <label>Hora preferida *</label>
+                <input type="time" name="time" required />
+                <label>Nombre del cliente *</label>
+                <input type="text" name="name" placeholder="Ej: María López" required />
+                <label>Descripción *</label>
+                <textarea name="description" rows="2" placeholder="Ej: Lavado y secado con volumen" required></textarea>
+                <button type="submit" class="btn btn-cta btn-block">Enviar reserva por WhatsApp</button>
+              </form>
+            </div>
+          </article>
+          <article class="barber-card">
+            <h3>Barbero 7</h3>
+            <p class="barber-role">Barbero</p>
+            <p class="barber-phone barber-phone--shop">Reserva vía <a href="https://wa.me/12129420519" target="_blank" rel="noopener">WhatsApp del salón</a> hasta tener número directo.</p>
+            <span class="barber-status">Online</span>
+            <button type="button" class="btn btn-outline btn-sm toggle-barber-form" aria-expanded="false">Reservar Cita</button>
+            <div class="barber-form-wrap" hidden>
+              <p class="barber-form-subtitle">Agenda tu cita por internet · Confirma por WhatsApp</p>
+              <button type="button" class="barber-form-hide toggle-barber-form">Ocultar formulario</button>
+              <form class="book-form barber-book-form" data-staff="Barbero 7" data-phone="12129420519" data-wa-route="shop" aria-label="Reserva con Barbero 7">
+                <label>Tipo de servicio *</label>
+                <select name="service" required>
+                  <option value="">Seleccione el servicio</option>
+                  <option value="Corte">Corte</option>
+                  <option value="Fade / Line up">Fade / Line up</option>
+                  <option value="Barba">Barba</option>
+                  <option value="Corte + barba">Corte + barba</option>
+                  <option value="Color / Tinte">Color / Tinte</option>
+                  <option value="Otro">Otro</option>
+                </select>
+                <label>Fecha *</label>
+                <input type="date" name="date" required />
+                <label>Hora preferida *</label>
+                <input type="time" name="time" required />
+                <label>Nombre del cliente *</label>
+                <input type="text" name="name" placeholder="Ej: María López" required />
+                <label>Descripción *</label>
+                <textarea name="description" rows="2" placeholder="Ej: Lavado y secado con volumen" required></textarea>
+                <button type="submit" class="btn btn-cta btn-block">Enviar reserva por WhatsApp</button>
+              </form>
+            </div>
+          </article>
+          <article class="barber-card">
+            <h3>Barbero 8</h3>
+            <p class="barber-role">Barbero</p>
+            <p class="barber-phone barber-phone--shop">Reserva vía <a href="https://wa.me/12129420519" target="_blank" rel="noopener">WhatsApp del salón</a> hasta tener número directo.</p>
+            <span class="barber-status">Online</span>
+            <button type="button" class="btn btn-outline btn-sm toggle-barber-form" aria-expanded="false">Reservar Cita</button>
+            <div class="barber-form-wrap" hidden>
+              <p class="barber-form-subtitle">Agenda tu cita por internet · Confirma por WhatsApp</p>
+              <button type="button" class="barber-form-hide toggle-barber-form">Ocultar formulario</button>
+              <form class="book-form barber-book-form" data-staff="Barbero 8" data-phone="12129420519" data-wa-route="shop" aria-label="Reserva con Barbero 8">
+                <label>Tipo de servicio *</label>
+                <select name="service" required>
+                  <option value="">Seleccione el servicio</option>
+                  <option value="Corte">Corte</option>
+                  <option value="Fade / Line up">Fade / Line up</option>
+                  <option value="Barba">Barba</option>
+                  <option value="Corte + barba">Corte + barba</option>
+                  <option value="Color / Tinte">Color / Tinte</option>
+                  <option value="Otro">Otro</option>
+                </select>
+                <label>Fecha *</label>
+                <input type="date" name="date" required />
+                <label>Hora preferida *</label>
+                <input type="time" name="time" required />
+                <label>Nombre del cliente *</label>
+                <input type="text" name="name" placeholder="Ej: María López" required />
+                <label>Descripción *</label>
+                <textarea name="description" rows="2" placeholder="Ej: Lavado y secado con volumen" required></textarea>
+                <button type="submit" class="btn btn-cta btn-block">Enviar reserva por WhatsApp</button>
+              </form>
+            </div>
+          </article>
+          <article class="barber-card">
+            <h3>Manicure &amp; Pedicure</h3>
+            <p class="barber-role">Especialista en uñas</p>
+            <p class="barber-phone barber-phone--shop">Reserva vía <a href="https://wa.me/12129420519" target="_blank" rel="noopener">WhatsApp del salón</a> hasta tener número directo.</p>
+            <span class="barber-status">Online</span>
+            <button type="button" class="btn btn-outline btn-sm toggle-barber-form" aria-expanded="false">Reservar Cita</button>
+            <div class="barber-form-wrap" hidden>
+              <p class="barber-form-subtitle">Agenda tu cita por internet · Confirma por WhatsApp</p>
+              <button type="button" class="barber-form-hide toggle-barber-form">Ocultar formulario</button>
+              <form class="book-form barber-book-form" data-staff="Manicure &amp; Pedicure" data-phone="12129420519" data-wa-route="shop" aria-label="Reserva manicure y pedicure">
+                <label>Tipo de servicio *</label>
+                <select name="service" required>
+                  <option value="">Seleccione el servicio</option>
+                  <option value="Manicure">Manicure</option>
+                  <option value="Pedicure">Pedicure</option>
+                  <option value="Manicure + Pedicure">Manicure + Pedicure</option>
+                  <option value="Acrílicas / gel">Acrílicas / gel</option>
+                  <option value="Otro">Otro</option>
+                </select>
+                <label>Fecha *</label>
+                <input type="date" name="date" required />
+                <label>Hora preferida *</label>
+                <input type="time" name="time" required />
+                <label>Nombre del cliente *</label>
+                <input type="text" name="name" placeholder="Ej: María López" required />
+                <label>Descripción *</label>
+                <textarea name="description" rows="2" placeholder="Ej: manicure con esmaltado semipermanente" required></textarea>
+                <button type="submit" class="btn btn-cta btn-block">Enviar reserva por WhatsApp</button>
+              </form>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -397,10 +679,21 @@
             <img src="images/taxi-boro-green.svg" alt="Ilustración de taxi verde estilo Boro Taxi en Upper Manhattan — Los Taxistas Barber Shop" loading="lazy" width="400" height="112" />
             <span class="gallery-taxi-label">Taxi verde de Upper Manhattan · <a href="https://www.nyc.gov/site/tlc/index.page" target="_blank" rel="noopener noreferrer">NYC TLC</a></span>
           </div>
-          <div class="gallery-item" style="background: linear-gradient(135deg, #0d1f0d 0%, #1a3a1a 100%);"><span>Cortes y fades</span></div>
-          <div class="gallery-item" style="background: linear-gradient(135deg, #0e1e0e 0%, #1e381e 100%);"><span>Antes y después</span></div>
-          <div class="gallery-item" style="background: linear-gradient(135deg, #0c1c0c 0%, #182e18 100%);"><span>Ambiente del salón</span></div>
-          <div class="gallery-item" style="background: linear-gradient(135deg, #0f210f 0%, #1c351c 100%);"><span>Diseños y detalles</span></div>
+          <div class="gallery-item gallery-item-taxi-alt">
+            <img src="images/taxi-barber.svg" alt="Taxi verde y barbería estilo Uptown Manhattan" loading="lazy" />
+            <span class="gallery-taxi-badge">Taxi vibes</span>
+          </div>
+          <div class="gallery-item gallery-item-taxi-alt">
+            <img src="images/taxi-boro-green.svg" alt="Green taxi de Upper Manhattan, símbolo de Los Taxistas" loading="lazy" />
+            <span class="gallery-taxi-badge">Green Cab</span>
+          </div>
+          <div class="gallery-item gallery-item-taxi-alt">
+            <img src="images/taxi-barber.svg" alt="Ilustración de taxi verde con estilo de barbería" loading="lazy" />
+            <span class="gallery-taxi-badge">Upper Manhattan</span>
+          </div>
+          <div class="gallery-item" style="background: linear-gradient(135deg, #102710 0%, #1f3f1f 100%);">
+            <span>Cortes, fades y cultura taxi verde</span>
+          </div>
         </div>
         <p class="gallery-instagram-note">Sigue <a href="https://www.instagram.com/lostaxistasbarbershop/" target="_blank" rel="noopener noreferrer"><strong>@lostaxistasbarbershop</strong></a> en Instagram para ver los últimos cortes.</p>
         <div class="section-cta">

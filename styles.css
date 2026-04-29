@@ -248,6 +248,14 @@ a:hover {
   gap: 2rem;
   align-items: center;
 }
+.hero-text {
+  background: linear-gradient(140deg, rgba(18, 24, 18, 0.82), rgba(10, 15, 10, 0.72));
+  border: 1px solid rgba(77, 168, 50, 0.2);
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(6px);
+}
 @media (max-width: 768px) {
   .hero-content--with-image {
     grid-template-columns: 1fr;
@@ -259,9 +267,7 @@ a:hover {
     margin: 0 auto;
   }
 }
-.hero-text {
-  min-width: 0;
-}
+.hero-text { min-width: 0; }
 .hero-logo {
   display: block;
   margin-bottom: 0.75rem;
@@ -272,6 +278,11 @@ a:hover {
 .hero-image-wrap {
   margin: 0;
   flex-shrink: 0;
+  background: linear-gradient(140deg, rgba(17, 34, 17, 0.8), rgba(10, 15, 10, 0.7));
+  border: 1px solid rgba(77, 168, 50, 0.25);
+  border-radius: 18px;
+  padding: 0.8rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
 }
 .hero-image {
   display: block;
@@ -603,6 +614,92 @@ a:hover {
   height: auto;
   max-height: 320px;
   object-fit: cover;
+}
+.barber-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.barber-card {
+  background: linear-gradient(150deg, #141d14 0%, #111811 100%);
+  border: 1px solid rgba(77, 168, 50, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+.barber-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(92, 192, 56, 0.5);
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.3);
+}
+.barber-card--featured {
+  grid-column: span 2;
+}
+.barber-photo {
+  width: 100%;
+  max-height: 520px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 6%;
+  border-radius: var(--radius);
+  border: 1px solid rgba(77, 168, 50, 0.3);
+}
+.barber-card--featured .barber-photo {
+  object-position: center top;
+}
+.barber-card h3 {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+}
+.barber-role,
+.barber-phone {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+.barber-phone--pending {
+  font-style: italic;
+}
+.barber-phone--shop {
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.barber-phone--shop a {
+  font-weight: 600;
+}
+.barber-status {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(77, 168, 50, 0.16);
+  color: var(--accent-hover);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.barber-form-wrap {
+  margin-top: 0.35rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+.barber-form-subtitle {
+  margin: 0 0 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.barber-form-hide {
+  background: transparent;
+  border: 0;
+  color: var(--accent);
+  font-size: 0.85rem;
+  padding: 0;
+  margin: 0 0 0.65rem;
+  cursor: pointer;
 }
 .team-grid {
   display: grid;
@@ -1024,6 +1121,8 @@ body.lang-en #content-en {
 }
 .gallery-item:hover {
   border-color: rgba(77, 168, 50, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
 }
 .gallery-item span {
   padding: 0.5rem;
@@ -1044,6 +1143,27 @@ body.lang-en #content-en {
   flex-direction: column;
   gap: 0;
   background: #e8f5e2;
+}
+.gallery-item-taxi-alt {
+  background: radial-gradient(circle at 30% 30%, rgba(77, 168, 50, 0.22), rgba(14, 21, 14, 0.95));
+}
+.gallery-item-taxi-alt img {
+  object-fit: contain;
+  padding: 0.65rem;
+  background: transparent;
+}
+.gallery-taxi-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #0a0f0a;
+  background: #95e874;
+  border-radius: 999px;
+  padding: 0.15rem 0.45rem;
 }
 .gallery-item-taxi img {
   object-fit: contain;
@@ -1421,6 +1541,9 @@ body.lang-en #content-en {
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+  .barber-card--featured {
+    grid-column: span 1;
   }
   .team-card {
     padding: 1rem;
