@@ -1195,9 +1195,17 @@ body.lang-en #content-en {
   color: var(--text-muted);
   margin-bottom: 0;
   text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
 }
 .gallery-instagram-note strong {
   color: var(--accent);
+}
+.gallery-instagram-note img {
+  opacity: 0.95;
 }
 
 /* Contact */
